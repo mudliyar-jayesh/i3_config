@@ -19,8 +19,10 @@ return require('packer').startup(function(use)
   use ("tpope/vim-fugitive")
 
   use {'neovim/nvim-lspconfig'}
-	  use {'hrsh7th/cmp-nvim-lsp'}
-	  use {'hrsh7th/nvim-cmp'}
-	  use {'VonHeikemen/lsp-zero.nvim' }
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/nvim-cmp'}
+  use {'VonHeikemen/lsp-zero.nvim' }
+
+  use {'mfussenegger/nvim-dap'}
 
 end)

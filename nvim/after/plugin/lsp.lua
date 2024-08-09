@@ -80,3 +80,17 @@ lspConfig.tsserver.setup{
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     root_dir = lspConfig.util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git")
 }
+
+lspConfig.rust_analyzer.setup{
+    cmd = { "rust-analyzer"},
+    filetypes = { "rust" },
+    root_dir = lspConfig.util.root_pattern("Cargo.toml", "rust-project.json"),
+    single_file_support = true,
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false;
+            }
+        }
+    }
+}

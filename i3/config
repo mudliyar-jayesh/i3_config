@@ -203,7 +203,7 @@ exec --no-startup-id picom -b
 
 
 # i3-gaps
-gaps inner 10  
+gaps inner 20  
 gaps outer 10
 
 

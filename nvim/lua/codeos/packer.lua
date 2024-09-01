@@ -27,5 +27,4 @@ return require('packer').startup(function(use)
 
   use { "nvim-neotest/nvim-nio" }
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
 end)

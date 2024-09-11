@@ -117,5 +117,15 @@ lspConfig.gopls.setup {
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
     root_dir = lspConfig.util.root_pattern("go.work", "go.mod", ".git"),
-    single_file_support = true
+    single_file_support = true,
+    on_attach = function(client, bufnr)
+        if client.server_capabilities.documentFormattingProvider then
+            vim.cmd [[
+                augroup GoAutoFormat
+                    autocmd! * <buffer>
+                    autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async=false })
+                augroup END
+            ]]
+        end
+    end,
 }

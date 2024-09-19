@@ -75,7 +75,7 @@ lspConfig.omnisharp.setup{
     },
 }
 
-lspConfig.tsserver.setup{
+lspConfig.ts_ls.setup{
     cmd = { "typescript-language-server", "--stdio"},
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     root_dir = lspConfig.util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git")
@@ -128,4 +128,11 @@ lspConfig.gopls.setup {
             ]]
         end
     end,
+}
+
+
+lspConfig.pyright.setup{
+    cmd = { "pyright-langserver", "--stdio" },
+    filetypes = {"python" },
+    single_file_support = true,
 }
